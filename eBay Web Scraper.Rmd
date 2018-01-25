@@ -1,0 +1,17 @@
+---
+title: "eBay Web Scraper"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Preparation
+
+```{prep}
+library(rvest)
+
+selector <- ".bot+ tr td:nth-child(2) , .info90daysMsg+ tr td:nth-child(2)"
+sellers <- c("caseonline","ghostek_direct","yan-yrd","wonderfullife*2011","untappedgames")
+```
