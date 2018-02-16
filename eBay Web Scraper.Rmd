@@ -13,5 +13,5 @@ knitr::opts_chunk$set(echo = TRUE)
 library(rvest)
 
 selector <- ".bot+ tr td:nth-child(2) , .info90daysMsg+ tr td:nth-child(2)"
-sellers <- c("caseonline","ghostek_direct","yan-yrd","wonderfullife*2011","untappedgames")
+sellers <- c("caseonline","ghostek_direct","yan-yrd","wonderfullife*2011","untappedgames".)
 ```
