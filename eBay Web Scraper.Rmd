@@ -14,4 +14,19 @@ library(rvest)
 
 selector <- ".bot+ tr td:nth-child(2) , .info90daysMsg+ tr td:nth-child(2)"
 sellers <- c("caseonline","ghostek_direct","yan-yrd","wonderfullife*2011","untappedgames".)
+
+df <- NULL
+
+for(i in sellers){
+  url <- paste0("https://feedback.ebay.com/ws/eBayISAPI.dll?ViewFeedback2&userid=", i, "&de=off&items=25&searchInterval=30&which=positive&interval=30&_trkparms=positive_365")  
+  doc <- read_html(url)
+  table <- doc %>%
+    html_nodes(css = selector) %>%
+    html_text() %>%
+    as.data.frame(stringsAsFactors = FALSE)
+  
+  df <- rbind(df,table)
+}
+colnames(df) <- "Feedback"
+View(df)
 ```
